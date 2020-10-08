@@ -1,6 +1,7 @@
 const fs = require('fs')
 const Discord = require('discord.js');
-const Client = require('./client/Client');
+const client = new Discord.Client();
+
 const {
 	prefix,
 	token,
@@ -19,8 +20,11 @@ for (const file of commandFiles) {
 console.log(client.commands);
 
 client.once('ready', () => {
-	console.log('Ready!');
+    console.log('Ready!');
+    client.user.setActivity('-help While Taming a T-rex')
+
 });
+
 
 client.once('reconnecting', () => {
 	console.log('Reconnecting!');
